@@ -1,0 +1,61 @@
+<div class="h-screen grid 
+    grid-rows-[auto_minmax(auto,_1fr)_50px]
+grid-cols-1">
+    <div class="header bg-gradient-to-r from-slate-900 via-gray-900 to-slate-700 text-white flex flex-row sm:justify-center">
+        <div><%= image_tag 'logo.jpg', alt: 'logo', width: '150px' %></div>
+        <div class="pt-7"><span class="text-2xl font-bold">Filofax</span></div>
+    </div>
+    <div class="section flex bg-gradient-to-r from-white via-white to-gray-900 text-white items-center justify-around sm:flex-col">
+        <div class="template-image sm:order-2 lg:hidden">
+            <%= image_tag 'template.jpg', alt: 'template image' %>
+            <h1 class="text-black text-center text-xl font-bold">Time management : Get it all done.</h1>
+            <p class="text-black text-center text-base italic">Set your tasks.</p>
+        </div>
+        <div class="signup-container w-1/4 sm:order-1 lg:bg-black lg:w-4/5 lg:p-5">
+            <h1 class="text-2xl font-bold">Sign in to your Account</h1>
+            <p class="text-stone-200">Organize your schedule</p>
+            <p class="text-stone-200">Created for developers by developers</p><br />
+            
+            <!--Sign in form start-->
+            
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="field">
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'text-black p-2 rounded w-full', placeholder: '📧 email' %>
+                </div><br />
+
+                <div class="field">
+                  <%= f.password_field :password, autocomplete: "current-password", class: 'text-black p-2 rounded w-full', placeholder: '🔑 password' %>
+                </div><br />
+
+                <% if devise_mapping.rememberable? %>
+                  <div class="field">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me %>
+                  </div><br />
+                <% end %>
+
+                <div class="actions">
+                  <%= f.submit "Log in", class: 'bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 p-2 rounded w-full' %>
+                </div><br />
+
+                  <div class="flex justify-center">
+                      <%= f.label 'Not registered yet?' %>&nbsp;
+                      <strong><%= link_to 'Sign Up', new_user_registration_path, {:style=> 'color:skyblue' } %></strong>
+                  </div><br />
+            <% end %>
+
+<%
+=begin%>
+ <%= render "devise/shared/links" %> 
+<%
+=end%>
+            
+
+            <!--Sign up form end-->
+
+        </div>
+    </div>
+    <div class="footer bg-gradient-to-r from-white via-gray-900 to-slate-700 text-white flex items-center justify-center">
+        <span>&copy; 2022 Filofax. All Rights Reserved</span>
+    </div>
+</div>

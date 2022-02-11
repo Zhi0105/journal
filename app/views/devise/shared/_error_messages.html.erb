@@ -1,0 +1,25 @@
+<% if resource.errors.any? %>
+  <div id="error_explanation">
+    
+    <div class="bg-yellow-900 p-2 italic">
+    <h2 class="text-xl font-bold">
+        <%= I18n.t("errors.messages.not_saved",
+                  count: resource.errors.count,
+                  resource: resource.class.model_name.human.downcase)
+        %>
+      </h2>
+    </div>
+    <div class="bg-yellow-500 p-2 rounded-sm"><p class="indent-1.5"><%= "#{resource.errors.full_messages.join(", ")}."%></p></div><br />
+            
+    <%
+=begin%>
+ <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul> 
+<%
+=end%>
+
+  </div>
+<% end %>

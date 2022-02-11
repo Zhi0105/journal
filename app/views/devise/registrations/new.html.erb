@@ -1,0 +1,71 @@
+<div class="h-screen grid 
+grid-rows-[auto_minmax(auto,_1fr)_50px]
+grid-cols-1">
+
+    <div class="header bg-gradient-to-r from-slate-900 via-gray-900 to-slate-700 text-white flex flex-row sm:justify-center">
+        <div><%= image_tag 'logo.jpg', alt: 'logo', width: '150px' %></div>
+        <div class="pt-7"><span class="text-2xl font-bold">Filofax</span></div>
+    </div>
+    <div class="section flex bg-gradient-to-r from-white via-white to-gray-900 text-white items-center justify-around sm:flex-col">
+        <div class="template-image sm:order-2 lg:hidden">
+            <%= image_tag 'template.jpg', alt: 'template image' %>
+            <h1 class="text-black text-center text-xl font-bold">Time management : Get it all done.</h1>
+            <p class="text-black text-center text-base italic">Set your tasks.</p>
+        
+        </div>
+        <div class="signup-container w-1/4 sm:order-1 lg:bg-black lg:w-4/5 lg:p-5 lg:mt-5">
+                
+            <h1 class="text-2xl font-bold">Create your Account</h1>
+            <p class="text-stone-200">Organize your schedule</p>
+            <p class="text-stone-200">Created for developers by developers</p><br />
+            
+            <!--Sign up form start-->
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= render "devise/shared/error_messages", resource: resource %><br />
+
+                <div class="field">
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'text-black p-2 rounded w-full', placeholder: '📧 email' %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :password %>
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "new-password", class: 'text-black p-2 rounded w-full', placeholder: '🔑 password' %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :password_confirmation %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'text-black p-2 rounded w-full', placeholder: '🔑 confirm password' %>
+                </div><br />
+
+                <div class="actions">
+                  <%= f.submit "Create my account", class: 'bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 p-2 rounded w-full' %>
+                </div><br />
+
+                
+                <div class="flex justify-center">
+                    <%= f.label 'Already have an account?' %>&nbsp;
+                    <strong><%= link_to 'Sign In', new_user_session_path, {:style=> 'color:skyblue' } %></strong>
+                </div>
+              <% end %>
+
+            <!--Sign up form end-->
+            
+            <%
+=begin%>
+ <%= render "devise/shared/links" %> 
+<%
+=end%>
+
+
+        </div>
+    </div>
+    <div class="footer bg-gradient-to-r from-white via-gray-900 to-slate-700 text-white flex items-center justify-center">
+        <span>&copy; 2022 Filofax. All Rights Reserved</span>
+    </div>
+</div>
+
+
+
