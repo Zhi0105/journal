@@ -1,0 +1,11 @@
+<%= form_for @category, url: create_category_path do |f| %>
+<div class="field">
+    <%= f.label :Category  %><br>
+    <%= f.text_field :name, autocomplete: :off, class: 'text-black p-2 rounded w-full', placeholder: 'name' %>
+</div>
+
+<div class="actions">
+    <%= f.submit 'Submit',  data: {confirm: 'Are you sure?'} %>
+    <%= link_to 'Back', categories_path%>
+</div>
+<% end %>
