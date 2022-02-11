@@ -1,2 +1,10 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="flex flex-row justify-around">
+    <div>
+        <h1 class="font-bold text-2xl">Welcome, <%= current_user.email%></h1>
+    </div>
+        <div class="font-bold">
+        ➕ <%= link_to 'Categories' %>&nbsp;<span>|</span>&nbsp;
+        📴 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        </div>
+
+</div>
