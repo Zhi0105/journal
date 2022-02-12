@@ -20,7 +20,7 @@ grid-cols-1">
             <p class="text-stone-200">Created for developers by developers</p><br />
             
             <!--Sign up form start-->
-                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= form_for(resource, as: resource_name, url: users_sign_up_path) do |f| %>
                   <%= render "devise/shared/error_messages", resource: resource %><br />
 
                 <div class="field">

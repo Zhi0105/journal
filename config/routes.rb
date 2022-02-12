@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :categories do
     resources :tasks
   end
+
+  devise_scope :user do
+    post 'users/sign_up', to: 'devise/registrations#create'
+  end
   
   root to: "home#index"
   

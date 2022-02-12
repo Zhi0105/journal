@@ -1,16 +1,41 @@
-<div class="flex flex-row justify-around pt-5">
-    <div>
-        <h1 class="font-bold text-2xl">👤Hi, <%= current_user.email%></h1>
-    </div>
-        <div class="font-bold">
-        📑<%= link_to  'Categories', categories_path %>&nbsp;<span>|</span>&nbsp;
-        📴 <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+<div class="h-screen">
+
+    <div class="header h-1/4">
+        <div class="flex flex-row justify-around pt-5">
+            <div>
+                <h1 class="font-bold text-2xl">👤Hi, <%= current_user.email%></h1>
+            </div>
+            <div class="font-bold">
+                📑<%= link_to  'Categories', categories_path %>&nbsp;<span>|</span>&nbsp;
+                📴 <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+            </div>
         </div>
-</div>
-        <br /><hr /><br />
+            <br /><hr /><br />
 
-    <div class="flex justify-center bg-green-400 w-full">
-        <p class="notice text-center text-2xl p-2 font-bold"><%= notice %></p>
-    </div><br /><br />
+        <div class="flex justify-center bg-green-400 w-full">
+            <p class="notice text-center text-2xl p-2 font-bold"><%= notice %></p>
+        </div><br /><br />
+    </div>
 
-    <div class="flex justify-center"><h1>Welcome message</h1></div>
+    <div class="section h-3/4 flex flex-col">
+            <div class="greetings flex justify-around">
+                <div class="mt-28">
+                    <h1 class="font-bold text-2xl italic">👏 Welcome, You can to start using Today.</h1><br />
+                    <%= image_tag 'landing.jpg', alt: 'welcome image', :style => 'width: 400px' %>
+                </div>
+                <div class="w-fit">
+                    <%= image_tag 'welcome.jpg', alt: 'welcome image' %>
+                    <h1 class="font-bold text-2xl">Hello There,</h1><br />
+                    <p class="indent-2">You may now start building your daily accomplishments.</p>
+                    <p>organize it by category.</p>
+                </div>
+            </div>
+
+            <br />
+            <div class="Daily pt-4">
+                <h1 class="text-center">Task record goes here!.</h1>
+            </div>
+    </div>
+    
+
+</b>

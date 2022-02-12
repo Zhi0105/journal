@@ -4,6 +4,7 @@
     </div>
         <div class="font-bold">
         ➕ <%= link_to  'Categories', new_category_path %>&nbsp;<span>|</span>&nbsp;
+        🔙<%= link_to  'Back', root_path %>&nbsp;<span>|</span>&nbsp;
         📴 <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'} %>
         </div>
 </div>
