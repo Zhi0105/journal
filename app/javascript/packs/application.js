@@ -10,7 +10,17 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 window.onload = () => {
-    
+    let nav = document.querySelector(`.mobile-nav`)
+    let closenav = document.querySelector(`.closebtn`)
+
+    nav.addEventListener(`click`, () => {
+        document.querySelector("#navs").style.width = "100%";
+    })
+
+    closenav.addEventListener(`click`, () => {
+        document.querySelector("#navs").style.width = "0%";
+    })
+
 }
 
 

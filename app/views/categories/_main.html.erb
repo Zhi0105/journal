@@ -1,3 +1,38 @@
+   <div class="flex flex-row justify-around pt-5">
+            <span style="font-size:30px;cursor:pointer" class="mobile-nav hidden md:block">
+                <!--&#9776; open -->
+                    &#9776;
+            </span>
+            
+            <div>
+                <h1 class="font-bold text-2xl md:hidden">👤Hi, <%= current_user.email%></h1>
+            </div>
+                <!-- Mobile nav links start -->
+                <div id="navs" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn">&times;</a>
+                    <div class="navs-content">
+                        <%= link_to  '➕ Categories', new_category_path, class: 'nav-categories' %>&nbsp;<span>|</span>&nbsp;
+                        <%= link_to  '🔙 Back', root_path, class: 'nav-back' %>&nbsp;<span>|</span>&nbsp;
+                        <%= link_to  '📴 Sign out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'nav-out' %>
+                    </div>
+                </div>
+                <!-- Mobile nav links end -->
+
+            <div class="font-bold md:hidden">
+                ➕ <%= link_to  'Categories', new_category_path %>&nbsp;<span>|</span>&nbsp;
+                🔙<%= link_to  'Back', root_path %>&nbsp;<span>|</span>&nbsp;
+                📴 <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+            </div>
+        </div>
+            <br /><hr /><br />
+
+        <div class="flex justify-center bg-green-400 w-full">
+            <p class="notice text-center text-2xl p-2 font-bold"><%= notice %></p>
+        </div>
+
+
+
+<!-- 
 <div class="flex flex-row justify-around pt-5">
     <div>
         <h1 class="font-bold text-2xl">👤Hi, <%= current_user.email%></h1>
@@ -13,3 +48,6 @@
     <div class="flex justify-center bg-green-400 w-full">
         <p class="notice text-center text-2xl p-2 font-bold"><%= notice %></p>
     </div>
+
+
+-->
