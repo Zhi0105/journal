@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   
   post '/categories' => 'categories#create', as: 'create_category'
 
+  post '/categories/:category_id/tasks' => 'tasks#create', as: 'create_task'
+
   # get 'home/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   

@@ -12,11 +12,13 @@
                         <div class="indent-1 text-xs"><span class="font-bold"> Date created: </span><%= category.created_at.strftime('%a %d %b %Y')%>&nbsp; <%= category.created_at.strftime("at %I:%M%p")%></div>
                         <div class="indent-1 text-xs"><span class="font-bold"> Last modified: </span><%= category.updated_at.strftime('%a %d %b %Y')%>&nbsp; <%= category.updated_at.strftime("at %I:%M%p")%></div>
                         <br />
-                        <p>task count</p>
+                        <p>total task count</p>
                     
+                        
                     </div>
-                    <div class="px-6 pt-4 pb-2 flex justify-center gap-10">
+                    <div class="flex justify-center gap-5">
                         <%= link_to '👓view', category_path(category.id), class: 'bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2' %>
+                        <%= link_to '➕task', new_category_task_path(category.id), class: 'bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2' %>
                         <%= link_to '⚙ edit', edit_category_path(category.id), class: 'bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2' %>
                     </div>
                 </div>

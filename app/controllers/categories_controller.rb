@@ -1,7 +1,5 @@
 class CategoriesController < ApplicationController
     before_action :authenticate_user!
-    # before_action :set_category, only: %i[show edit update destroy]
-
 
     def index
         @categories = current_user.categories
@@ -13,7 +11,6 @@ class CategoriesController < ApplicationController
 
     def show
         @category = current_user.categories.find(params[:id])
-
     end
 
     def edit
@@ -42,9 +39,6 @@ class CategoriesController < ApplicationController
 
 
     private
-    # def set_category
-    #     @categories = current_user.find(params[:id])
-    # end
     
     def category_params
         params.require(:category).permit(:name)
