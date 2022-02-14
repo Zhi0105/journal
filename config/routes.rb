@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   root to: "home#index"
   
   post '/categories' => 'categories#create', as: 'create_category'
-
   post '/categories/:category_id/tasks' => 'tasks#create', as: 'create_task'
 
+  delete '/categories/:category_id/tasks/:id' => 'tasks#destroy', as: 'delete_task'
   # get 'home/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   

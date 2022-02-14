@@ -10,6 +10,11 @@ class TasksController < ApplicationController
     end
 
     def show
+        @task = Task.find(params[:id])
+    end
+
+    def edit
+        @task = Task.find(params[:id])
     end
 
     def create
@@ -21,7 +26,24 @@ class TasksController < ApplicationController
             render :new
         end
 
+    end
 
+    def update
+        @task = Task.find(params[:id])
+        if @task.update(task_params)
+            redirect_to categories_path, notice: 'Task successfully updated!'
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        @task = Task.find(params[:id])
+        if @task.delete
+            redirect_to categories_path, notice: 'Task successfully removed!'
+        else
+            render :edit
+        end
     end
 
     private
