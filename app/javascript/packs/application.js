@@ -9,8 +9,9 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-window.addEventListener(`DOMContentLoaded`, () => {
     
+document.addEventListener(`turbolinks:load`, () => {
+
         // NAVIGATION CODE START
         let nav = document.querySelector(`.mobile-nav`)
         let closenav = document.querySelector(`.closebtn`)
@@ -25,7 +26,9 @@ window.addEventListener(`DOMContentLoaded`, () => {
         // NAVIGATION CODE END
     
 
+
 })
+
 
 
 Rails.start()

@@ -1,22 +1,24 @@
 <div class="h-screen flex items-center justify-center p-5 w-screen">
 
 <div class="flex flex-col gap-5">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <div class="max-w-full rounded overflow-hidden shadow-lg">
                 <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2 text-center"><%= @category.name%></div>
+                        <div class="font-bold text-3xl mb-2 text-center"><%= @category.name%></div>
                         <p class="text-gray-700 text-base">
                         <% @tasks = Task.where("category_id = ?", @category.id) %>
                                 <table>
                                 <thead>
                                         <tr>
-                                        <td></td>
+                                        <td class="text-center text-base font-bold">Tasks</td>
+                                        <td class="text-center text-base font-bold">Due date</td>
                                         <td colspan="3"></td>
                                         </tr>
                                 </thead>
                                 <tbody>
                                 <% @tasks.each do |task| %>
                                         <tr>
-                                        <td class="p-3"><%= task.name.downcase%></td>
+                                        <td class="text-base p-3 font-bold capitalize"><%= task.name%></td>
+                                        <td class="p-3 text-sm"><%= task.due_date.strftime('%a %d %b %Y')%></td>
                                         <td>
                                                 <%= link_to '👓', category_task_path(@category.id, task.id), class: 'inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'%>
                                         </td>

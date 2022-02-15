@@ -11,7 +11,8 @@
                     </ul>
             <% end %>
             <label>📝 Modifying task:</label>
-            <%= f.text_field :name, autocomplete: :off, class: 'text-base text-black p-2 rounded w-full', placeholder: 'enter name' %>
+            <%= f.text_field :name, autocomplete: :off, class: 'text-base text-black p-2 rounded w-full', placeholder: 'enter name' %><br /><br />
+            <%= f.date_field :due_date, class: 'text-base p-2 w-full' %>
         </div><br />
 
         <div class="actions flex justify-center gap-10">
