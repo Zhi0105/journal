@@ -24,6 +24,10 @@ grid-cols-1">
                   <%= render "devise/shared/error_messages", resource: resource %><br />
 
                 <div class="field">
+                  <%= f.text_field :username, autofocus: true, autocomplete: "email", class: 'text-black p-2 rounded w-full', placeholder: '👤 username' %>
+                </div><br />
+
+                <div class="field">
                   <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'text-black p-2 rounded w-full', placeholder: '📧 email' %>
                 </div>
 

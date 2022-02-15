@@ -9,19 +9,23 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-window.onload = () => {
-    let nav = document.querySelector(`.mobile-nav`)
-    let closenav = document.querySelector(`.closebtn`)
+window.addEventListener(`DOMContentLoaded`, () => {
+    
+        // NAVIGATION CODE START
+        let nav = document.querySelector(`.mobile-nav`)
+        let closenav = document.querySelector(`.closebtn`)
+    
+        nav.addEventListener(`click`, () => {
+            document.querySelector("#navs").style.width = "100%";
+        })
+    
+        closenav.addEventListener(`click`, () => {
+            document.querySelector("#navs").style.width = "0%";
+        })
+        // NAVIGATION CODE END
+    
 
-    nav.addEventListener(`click`, () => {
-        document.querySelector("#navs").style.width = "100%";
-    })
-
-    closenav.addEventListener(`click`, () => {
-        document.querySelector("#navs").style.width = "0%";
-    })
-
-}
+})
 
 
 Rails.start()

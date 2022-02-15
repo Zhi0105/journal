@@ -8,7 +8,7 @@
             </span>
             
             <div>
-                <h1 class="font-bold text-2xl md:hidden">👤Hi, <%= current_user.email%></h1>
+                <h1 class="font-bold text-2xl md:hidden">👤Hi, <span class="capitalize"><%= "#{current_user.username}!"%></span>
             </div>
                 <!-- Mobile nav links start -->
                 <div id="navs" class="overlay">
@@ -22,7 +22,7 @@
 
             <div class="font-bold md:hidden">
                 📑<%= link_to  'Categories', categories_path %>&nbsp;<span>|</span>&nbsp;
-                📴 <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+                📴<%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'} %>
             </div>
         </div>
             <br /><hr /><br />
@@ -32,6 +32,7 @@
         </div><br /><br />
     </div>
 
+
     <div class="section h-3/4 flex flex-col">
             <div class="greetings flex justify-around md:justify-center md:flex-col">
                 <div class="mt-28 md:order-2">
@@ -40,7 +41,7 @@
                 </div>
                 <div class="w-fit md:ml-20">
                     <%= image_tag 'welcome.jpg', alt: 'welcome image' %>
-                    <h1 class="font-bold text-2xl">Hello There,</h1><br />
+                    <h1 class="font-bold text-2xl">✋ Hello There,</h1><br />
                     <p class="indent-2">You may now start building your daily accomplishments.</p>
                     <p>organize it by category.</p>
                 </div>
@@ -49,6 +50,7 @@
             <br />
             <div class="Daily pt-4">
                 <h1 class="text-center">Task record goes here!.</h1>
+                
             </div>
     </div>
     
