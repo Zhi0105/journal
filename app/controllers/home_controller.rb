@@ -8,6 +8,7 @@ class HomeController < ApplicationController
         from tasks left join categories on categories.id = tasks.category_id
         left join users on users.id = categories.user_id
         where categories.user_id = #{@id}
+        order by categories.id
       ")
       
   end
