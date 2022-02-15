@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* FOR MOBILE NAV RESPONSIVENESS START */
 
 .overlay {
@@ -47,3 +46,17 @@
 }
 
 /* FOR MOBILE NAV RESPONSIVENESS START */
+
+/* 
+.hi{
+    animation: hiAnimate 1s;
+}
+
+@keyframes hiAnimate {
+    0%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+} */

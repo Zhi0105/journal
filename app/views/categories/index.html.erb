@@ -9,7 +9,7 @@
             <li>
                 <div class="max-w-sm rounded overflow-hidden shadow-lg bg-green-200">
                     <div class="px-6 py-4">
-                        <div class="font-bold text-2xl mb-2"><%= category.name %></div>
+                        <div class="font-bold text-2xl mb-2 capitalize"><%= category.name %></div>
                         
                         <div class="indent-1 text-xs"><span class="font-bold"> Date created: </span><%= category.created_at.strftime('%a %d %b %Y')%><!--&nbsp; <%= category.created_at.strftime("at %I:%M%p")%>--></div>
                         <div class="indent-1 text-xs"><span class="font-bold"> Last modified: </span><%= category.updated_at.strftime('%a %d %b %Y')%><!--&nbsp; <%= category.updated_at.strftime("at %I:%M%p")%>--></div>
