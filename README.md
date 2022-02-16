@@ -18,7 +18,7 @@ This is **FILOFAX** Application helps you to organize your specific task by cate
   
   
   
-  <p>
+
   **LOGIN DESKTOP VIEW:** <br/>
   ![login view desktop](https://scontent.xx.fbcdn.net/v/t1.15752-9/s843x403/274002111_954176475301679_5607417632274335232_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=aee45a&_nc_ohc=CKM2IPW7a44AX9aLp_B&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVK0xdSRHAwhOJI-jCcqFmOZGbfuHKE_G2pL8je_V4jA2g&oe=62331273)
-  </p>
+
