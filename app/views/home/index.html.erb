@@ -7,7 +7,7 @@
             </span>
             
             <div>
-                <h1 class="font-bold text-2xl md:hidden">👤Welcome, <span class="capitalize"><%= "#{current_user.username}!"%></span>
+                <h1 class="font-bold text-2xl md:hidden">👤Hi, <span class="capitalize"><%= "#{current_user.username}!"%></span>
             </div>
                 <!-- Mobile nav links start -->
                 <div id="navs" class="overlay">
@@ -31,12 +31,31 @@
         </div><br /><br />
     </div>
 
-
     <div class="section h-3/4 flex flex-col">
-            <div class="greetings flex justify-around md:justify-center md:flex-col">
-                <div class="mt-28 md:order-2">
-                    <%= image_tag 'landing.jpg', alt: 'welcome image', :style => 'width: 400px' %>
-                    <h1 class="font-bold text-2xl italic md:text-center">👏 You can to start using Today.</h1><br />
+            <div class="greetings flex justify-around md:justify-center md:flex-col md:items-center">
+    
+                <div class="bg-yellow-100 rounded-xl p-2 w-2/5 md:w-4/5 md:mt-5">
+                    <h1 class="pb-3 pl-2 text-base">
+                        <span class="font-bold">Todo today : </span>
+                        <span class="italic">(<%= Date.today.strftime('%a %d %b %Y') %>)</span>
+                    </h1>
+                    <hr class="class border-black"></hr>
+                    <ul>
+                        <% @tasklist.each do |t| %>
+                            <%if t.due. <= Date.today %>    
+                            <div class="rounded p-2 indent-2">
+                                <div class="inline-flex items-center bg-white leading-none text-purple-600 rounded-full p-2 shadow text-teal text-sm">
+                                    <span class="inline-flex bg-indigo-600 text-white rounded-full h-6 px-3 justify-center items-center">
+                                        <%= t.category_name%>
+                                    </span>
+                                    <span class="inline-flex px-2">
+                                        <%= t.task%>
+                                    </span>
+                                </div>
+                            </div>
+                            <% end %>
+                        <% end %>
+                    </ul>                     
                 </div>
                 <div class="w-fit md:ml-20">
                     <%= image_tag 'welcome.jpg', alt: 'welcome image' %>
@@ -44,31 +63,12 @@
                     <p class="indent-2">You may now start building your daily accomplishments.</p>
                     <p>organize it by category.</p> <br />
 
-
-                    <div class="bg-yellow-200 rounded-xl p-2">
-                        <h1 class="pb-3 pl-2 text-base">
-                            <span class="font-bold">Todo today : </span>
-                            <span class="italic">(<%= Date.today.strftime('%a %d %b %Y') %>)</span>
-                        </h1>
-                        <hr class="class border-black"></hr>
-                        <ul>
-                        <% @tasklist.each do |t| %>
-                            <%if t.due. <= Date.today %>    
-                                <div class="rounded p-2 indent-2">
-                                    <div class="inline-flex items-center bg-white leading-none text-purple-600 rounded-full p-2 shadow text-teal text-sm">
-                                        <span class="inline-flex bg-indigo-600 text-white rounded-full h-6 px-3 justify-center items-center">
-                                        <%= t.category_name%>
-                                        </span>
-                                        <span class="inline-flex px-2">
-                                        <%= t.task%>
-                                        </span>
-                                    </div>
-                                </div>
-                            <% end %>
-                        <% end %>
-                        </ul>                     
-                    </div><br />
                 </div>
+            </div><br />
+            <div class="flex flex-col items-center">
+                <%= image_tag 'landing.jpg', alt: 'welcome image', :style => 'width: 400px' %>
+                <h1 class="font-bold text-2xl italic md:text-center">👏 Welcome, You can to start using Today.</h1><br />
             </div>
     </div>
+
 </div>
