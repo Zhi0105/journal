@@ -1,25 +1,24 @@
 <div class="h-screen bg-green-200 flex items-center justify-center p-5 w-screen">
-    <%= form_with model: [@category, @task] do |f| %>
-    <div>
-        
-        <div class="field font-bold text-2xl">
+    <div class="w-1/2 p-2">
+        <%= form_with model: [@category, @task] do |f| %>    
+            <div class="field font-bold text-2xl">
+                <label>📝 Modifying task:</label><br /><br />
+                <%= f.text_field :name, autocomplete: :off, class: 'mb-4 text-base text-black p-2 rounded w-full', placeholder: 'enter name' %>
+                <%= f.date_field :due_date, class: 'text-base p-2 w-full' %>
+            </div>
             <% if @task.errors.any? %>
-                    <ul classs="validation-message">
-                        <% @task.errors.full_messages.each do |message| %>
-                            <li style="list-style-type:none; color:#ff2e46;"><%= message %></li>
-                        <% end %>
-                    </ul>
-            <% end %>
-            <label>📝 Modifying task:</label>
-            <%= f.text_field :name, autocomplete: :off, class: 'text-base text-black p-2 rounded w-full', placeholder: 'enter name' %><br /><br />
-            <%= f.date_field :due_date, class: 'text-base p-2 w-full' %>
-        </div><br />
+                        <ul classs="validation-message">
+                            <% @task.errors.full_messages.each do |message| %>
+                                <li style="list-style-type:none; color:#ff2e46;"><%= message.downcase %></li>
+                            <% end %>
+                        </ul>
+                <% end %><br />
 
-        <div class="actions flex justify-center gap-10">
-            <%= f.submit '✔ Submit', data: {confirm: 'Are you sure?'}, class: 'bg-green-700 p-2 rounded text-white hover:bg-red-700 text-white'%>
-            
-            <%= link_to '👈 back', category_path(@category.id), class: 'bg-green-700 p-2 rounded text-white hover:bg-red-700 text-white' %>
-        </div>
+            <dic class="actions flex justify-center gap-10">
+                <%= f.submit '✔ Submit', data: {confirm: 'Are you sure?'}, class: 'bg-green-700 p-2 rounded text-white hover:bg-red-700 text-white'%>
+                
+                <%= link_to '👈 back', category_path(@category.id), class: 'bg-green-700 p-2 rounded text-white hover:bg-red-700 text-white' %>
+            </div>
+        <% end %>
     </div>
-<% end %>
 </div>
