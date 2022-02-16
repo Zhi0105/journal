@@ -43,7 +43,7 @@
                     <ul>
                         <% @tasklist.each do |t| %>
                             <%if t.due. <= Date.today %>    
-                            <div class="rounded p-2 indent-3">
+                            <div class="rounded p-1 indent-1">
                                 <div class="inline-flex items-center leading-none text-purple-600 rounded-full p-2 shadow text-teal text-sm">
                                     <span class="inline-flex bg-indigo-600 text-lg text-white rounded-full h-6 p-3 justify-center items-center">
                                         <%= t.category_name%>
