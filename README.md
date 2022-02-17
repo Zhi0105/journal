@@ -3,7 +3,6 @@
 This is **FILOFAX** Application helps you to organize your specific task by categories.
 
 **PREREQUISITES:** <br/>
-  <p>
   -Ruby on rails v6.1.4.4 <br/>
   -RUBY v3.0.2 <br/>
   -Postgresql v14.1 <br/>
@@ -14,7 +13,6 @@ This is **FILOFAX** Application helps you to organize your specific task by cate
   -TYPE `npm install` <br/>
   -TYPE `rails db:create` <br/>
   -TYPE `rails db:migrate`
-  </p>
   
   
   
