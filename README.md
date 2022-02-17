@@ -10,10 +10,10 @@ This is **FILOFAX** Application helps you to organize your specific task by cate
   -pgadmin4 v6.4 <br/>
   -CLONE THIS REPOSITORY <br/>
   -AFTER CLONING, GO TO YOUR CLONED FOLDER/ROOT FOLDER OF THIS PROJECT VIA TERMINAL. <br/>
-  -TYPE bundle install. <br/>
-  -TYPE npm install. <br/>
-  -TYPE rails db:create <br/>
-  -TYPE rails db:migrate
+  -TYPE `bundle install` <br/>
+  -TYPE `npm install` <br/>
+  -TYPE `rails db:create` <br/>
+  -TYPE `rails db:migrate`
   </p>
   
   
