@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
+
   resources :categories do
     resources :tasks
   end
+
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    sessions: "users/sessions",
+    confirmations: "users/confirmations"
+  }
 
   devise_scope :user do
     post 'users/sign_up', to: 'devise/registrations#create'

@@ -14,14 +14,14 @@
                     <a href="javascript:void(0)" class="closebtn">&times;</a>
                     <div class="navs-content">
                         <%= link_to  '📑 Categories', categories_path, class: 'nav-categories' %>&nbsp;<span>|</span>&nbsp;
-                        <%= link_to  '📴 Sign out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'nav-out' %>
+                        <%= link_to  '📴 Sign out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'}, id: "out", class: 'nav-out' %>
                     </div>
                 </div>
                 <!-- Mobile nav links end -->
 
             <div class="font-bold md:hidden">
                 📑<%= link_to  'Categories', categories_path %>&nbsp;<span>|</span>&nbsp;
-                📴<%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+                📴<%= link_to 'Sign out',destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'}, id: "out"  %>
             </div>
         </div>
             <br /><hr /><br />

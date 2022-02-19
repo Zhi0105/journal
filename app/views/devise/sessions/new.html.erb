@@ -21,11 +21,11 @@ grid-cols-1">
     
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="field">
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'text-black p-2 rounded w-full', placeholder: '📧 email' %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email",id: 'email', class: 'text-black p-2 rounded w-full', placeholder: '📧 email' %>
                 </div><br />
 
                 <div class="field">
-                  <%= f.password_field :password, autocomplete: "current-password", class: 'text-black p-2 rounded w-full', placeholder: '🔑 password' %>
+                  <%= f.password_field :password, autocomplete: "current-password",id: 'password', class: 'text-black p-2 rounded w-full', placeholder: '🔑 password' %>
                 </div><br />
 
                 <% if devise_mapping.rememberable? %>
@@ -36,7 +36,7 @@ grid-cols-1">
                 <% end %>
 
                 <div class="actions">
-                  <%= f.submit "Log in", class: 'bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 p-2 rounded w-full' %>
+                  <%= f.submit "Log in",id: "submit", class: 'bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 p-2 rounded w-full' %>
                 </div><br />
 
                   <div class="flex justify-center">

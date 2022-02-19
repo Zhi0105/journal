@@ -4,7 +4,7 @@
         
             <div class="field font-bold text-xl">
                 <label>📝 Category name:</label><br /><br />
-                <%= f.text_field :name, autocomplete: :off, class: 'w-full text-base text-black p-3 rounded', placeholder: 'enter name' %>
+                <%= f.text_field :name, autocomplete: :off, class: 'w-full text-base text-black p-3 rounded', placeholder: 'enter name', id: 'name' %>
             </div>
             <% if @category.errors.any? %>
                         <ul classs="validation-message">
@@ -14,7 +14,7 @@
                         </ul>
             <% end %><br />
             <div class="actions flex justify-center gap-10">
-                <%= f.submit '✔ Submit', data: {confirm: 'Are you sure?'}, class: 'bg-green-700 p-2 rounded text-white hover:bg-red-700 text-white'%>
+                <%= f.submit '✔ Submit', data: {confirm: 'Are you sure?'}, class: 'bg-green-700 p-2 rounded text-white hover:bg-red-700 text-white', id: 'submit'%>
                 
                 <%= link_to '👈 categories', categories_path, class: 'bg-green-700 p-2 rounded text-white hover:bg-red-700 text-white' %>
             </div>
